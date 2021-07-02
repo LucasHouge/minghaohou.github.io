@@ -92,7 +92,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/02/article-title/">article title</a>
+      <a class="p-name article-title" href="/2021/07/02/article-title/">尝试搭建博客</a>
     </h1>
   
 
@@ -100,11 +100,160 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="今天初步使用一下hexo"><a href="#今天初步使用一下hexo" class="headerlink" title="今天初步使用一下hexo"></a>今天初步使用一下hexo</h3>
+        <h3 id="今天初步使用一下hexo"><a href="#今天初步使用一下hexo" class="headerlink" title="今天初步使用一下hexo"></a>今天初步使用一下hexo</h3><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><ol>
+<li><p>登陆 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">GIT官网</a>  下载安装</p>
+</li>
+<li><p>设置用户名与邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name tsja //设置用户名</span><br><span class="line">git config --global user.email wuhu@qq.com //设置邮箱</span><br></pre></td></tr></table></figure></li>
+<li><p>初始化本地库</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git init</td>
+<td>初始化本地库</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>查看本地库状态</td>
+</tr>
+<tr>
+<td>git add 文件</td>
+<td>添加文件到暂存区</td>
+</tr>
+<tr>
+<td>git rm –cached 文件</td>
+<td>删除暂存区内文件</td>
+</tr>
+<tr>
+<td>git commit -m “日志信息” 文件</td>
+<td>暂存区提交到本地库</td>
+</tr>
+<tr>
+<td>git reflog</td>
+<td>查看日志信息</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>查看详细日志信息</td>
+</tr>
+<tr>
+<td>git reset –hard 版本号</td>
+<td>版本穿梭</td>
+</tr>
+</tbody></table>
+<ol>
+<li>修改文件后，使用<code> git status</code>会标红修改后未提交到文件，再使用<code>git add 文件</code>和<code>git commit -m “日志信息” 文件</code>即可提交新版本</li>
+<li>版本穿梭的版本号由<code>git  reflog</code>获得，精简和完整的版本号都可以</li>
+</ol>
+</li>
+<li><p>git分支操作</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git branch -v</td>
+<td>查看分支状况</td>
+</tr>
+<tr>
+<td>git branch 分支名称</td>
+<td>创建分支</td>
+</tr>
+<tr>
+<td>git checkout 分支名称</td>
+<td>转到分支</td>
+</tr>
+<tr>
+<td>git merge 需要合并下来的分支名称</td>
+<td>合并分支</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>git远程库</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git remote -v</td>
+<td>现实远程库别名</td>
+</tr>
+<tr>
+<td>git remote add 要设置的别名 远程库https地址</td>
+<td>设置远程库别名</td>
+</tr>
+<tr>
+<td>git push 远程库别名 要推送的分支名</td>
+<td>推送到远程库</td>
+</tr>
+<tr>
+<td>git pull 远程库别名 要拉取的分支名</td>
+<td>拉去远程库</td>
+</tr>
+<tr>
+<td>git clone 远程库地址</td>
+<td>克隆库</td>
+</tr>
+</tbody></table>
+<ol>
+<li>注：克隆库的别名为origin</li>
+<li>邀请管理者方法<code>项目中Setting-Manage access-Invite a collaborator邀请用户</code></li>
+<li>跨团队协作：点击项目右上角的fork，即放到自己的远程库，可以修改后提交</li>
+</ol>
+</li>
+<li><p>ssh密钥</p>
+<ol>
+<li>终端输入<code>ssh-keygen -t rsa -C github登陆邮箱</code></li>
+<li>连按回车直到成功</li>
+<li><code>cd /Users/yangzhuoran/.ssh</code>跳转到文件目录下，<code>id_rsa</code>为私钥，<code>id_rsa.pub</code>为公钥</li>
+<li><code>cat id_rsa.pub</code>打开公钥，复制到github-头像-setting-SSH and GPG keys-New SSH key生成公钥</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>git常用命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git add</td>
+<td>增加文件到暂存库</td>
+</tr>
+<tr>
+<td>git commit</td>
+<td></td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>先拉，再提交</td>
+</tr>
+<tr>
+<td>git push</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/02/article-title/" data-id="ckqmh23yi0000wn8nft5x291z" data-title="article title" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/02/article-title/" data-id="ckqmh23yi0000wn8nft5x291z" data-title="尝试搭建博客" class="article-share-link">分享</a>
       
       
       
@@ -198,7 +347,7 @@
       <ul>
         
           <li>
-            <a href="/2021/07/02/article-title/">article title</a>
+            <a href="/2021/07/02/article-title/">尝试搭建博客</a>
           </li>
         
           <li>
